@@ -18,6 +18,7 @@ body {
     max-width: 1224px;
     padding-right: 10px;
     padding-left:  10px;
+    position: relative;
 }
 
 .mainMenu {
@@ -28,6 +29,7 @@ body {
     height: 60px;
     top: 0;
     background-color: rgb(39 178 177);
+    z-index: 3;
 }
 
 .mainMenu .wrapper {
@@ -76,4 +78,35 @@ body {
     text-align: center;
     color: #FFFFFF;
     font-size: 2rem;
+}
+
+.intro {
+    background-color: #ce9d00;
+    height: 100vh;
+}
+
+.intro .wrapper {
+    /* display: flex;
+    justify-content: space-between; */
+    position: relative;
+}
+
+.intro img {
+    position: absolute;
+    max-width: 500px;
+    margin-top: 15vh;
+    margin-left: 10vw;
+    z-index: 1;
+}
+
+.intro .introText {
+    position: absolute;
+    max-width: 450px;
+    z-index: 2;
+    padding: 1rem;
+    background-color: #FFFFFF;
+    margin-top: 55vh;
+    margin-right: 10vw;
+    right: 0;
+    height: fit-content;
 }
