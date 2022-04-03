@@ -4,12 +4,12 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Montserrat', sans-serif;
 }
 
 body {
     padding: 0;
     margin: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .wrapper {
@@ -99,6 +99,16 @@ body {
     z-index: 1;
 }
 
+.intro .introText h2{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+}
+
+.intro .introText p {
+    font-family: 'Ubuntu', sans-serif;
+    margin-top: 1rem;
+}
+
 .intro .introText {
     position: absolute;
     max-width: 450px;
@@ -109,4 +119,71 @@ body {
     margin-right: 10vw;
     right: 0;
     height: fit-content;
+}
+
+.services {
+    min-height: 50vh;
+}
+
+.services .wrapper {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+}
+
+h3 {
+    margin-top: 5rem;
+    position: relative;
+    font-size: 2rem;
+}
+
+h3::after{
+    content:'';
+    position: absolute;
+    background-color: #ce9d00;
+    background-position: 0 center;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    height: 5px;
+    width: 100px;
+    bottom: -10px;
+}
+
+.cardContainer {
+    display: flex;
+    max-width: 100%;
+    margin-bottom: 5rem;
+}
+
+.cardContainer .card img {
+    width: 50px;
+    height: 50px;
+}
+
+.cardContainer .card {
+    margin: 2.5rem;
+    width: 33.333%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+    font-family: 'Ubuntu', sans-serif !important;
+}
+
+.cardContainer h4 {
+    margin-top: 1rem;
+}
+
+.beige {
+    min-height: 50vh;
+    background-color: #FFF1CC;
+}
+
+footer {
+    min-height: 250px;
+    background-color: #3E3E3E;
 }
