@@ -231,3 +231,28 @@ footer img {
 .sns:hover {
     transform: scale(1.2); 
 }
+
+.post-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.post-content {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.post-info {
+    margin-top: 2rem;
+    text-align: center;
+    color: #C4C4C4;
+}
+
+.post-content, .post-content p, .post-content h2 {
+    margin-top: 2rem;
+}
+
+.post-content {
+    margin-bottom: 4rem;
+}
+
