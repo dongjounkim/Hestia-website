@@ -125,7 +125,7 @@ body {
     min-height: 50vh;
 }
 
-.services .wrapper {
+.services .wrapper, .beige .wrapper {
     display: flex;
     /* justify-content: center; */
     align-items: center;
@@ -186,4 +186,48 @@ h3::after{
 footer {
     min-height: 250px;
     background-color: #3E3E3E;
+    display: flex;
+    align-content: center;
+}
+
+footer .wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer img {
+    width: 200px;
+}
+
+.legal ul {
+    list-style-type: none;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.legal ul li {
+    padding: 20px 30px;
+}
+
+.legal ul li a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.legal ul li a:hover {
+    color: #CCCCCC;
+    transition: 500ms;
+}
+
+.sns {
+    width: 30px;
+    transition: 500ms;
+}
+
+.sns:hover {
+    transform: scale(1.2); 
 }
