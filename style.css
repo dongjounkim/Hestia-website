@@ -1,0 +1,580 @@
+/* 
+
+Theme Name: Hestia UVSQ
+Text Domain: Hestia UVSQ
+Version: 1.0
+Description: Hestia UVSQ
+Tags: project
+Author: Leonard Kim
+Author URI: https://www.leonardkim.fr
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.wrapper {
+    margin-right: auto;
+    margin-left:  auto;
+    max-width: 1224px;
+    padding-right: 10px;
+    padding-left:  10px;
+    position: relative;
+}
+  
+  .menu-button-container {
+    display: none;
+    height: 100%;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #menu-toggle {
+    display: none;
+  }
+  
+  .menu-button,
+  .menu-button::before,
+  .menu-button::after {
+    display: block;
+    background-color: #fff;
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 2px;
+    margin-right:86px;
+  }
+  
+  .menu-button::before {
+    content: "";
+    margin-top: -8px;
+  }
+  
+  .menu-button::after {
+    content: "";
+    margin-top: 8px;
+  }
+  
+  #menu-toggle:checked + .menu-button-container .menu-button::before {
+    margin-top: 0px;
+    transform: rotate(405deg);
+  }
+  
+  #menu-toggle:checked + .menu-button-container .menu-button {
+    background: rgba(255, 255, 255, 0);
+  }
+  
+  #menu-toggle:checked + .menu-button-container .menu-button::after {
+    margin-top: 0px;
+    transform: rotate(-405deg);
+  }
+  
+  @media (max-width: 768px) {
+    .mainMenu li a , .beigeMenu li a{
+        padding: 0 !important;
+    }
+    
+    .menu-button-container {
+      display: flex;
+    }
+  
+    .menu {
+      position: absolute;
+      top: 0;
+      margin-top: 63px;
+      left: 0;
+      flex-direction: column;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .legal .menu {
+        position: relative;
+        margin-top: 0;
+    }
+  
+    #menu-toggle ~ .menu li {
+      height: 0;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+  
+    #menu-toggle:checked ~ .menu li {
+      border: 1px solid #333;
+      height: 2.5em;
+      padding: 0.5em;
+      transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+  
+    .menu > li {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0.5em 0;
+      width: 100%;
+      color: white;
+      background-color: #222;
+    }
+  
+    .menu > li:not(:last-child) {
+      border-bottom: 1px solid #444;
+    }
+  }
+
+.mainMenu {
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    top: 0;
+    background-color: rgb(39 178 177);
+    z-index: 3;
+}
+
+.beigeMenu {
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    top: 0;
+    z-index: 3;
+    background-color: #ce9d00;
+}
+
+.mainMenu .wrapper, .beigeMenu .wrapper {
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.mainMenu ul, .beigeMenu ul {
+    list-style-type: none;
+    overflow: hidden;
+}
+
+.menuImg{
+    width: 100px;
+    margin: 0px 30px;
+}
+
+.mainMenu li, .beigeMenu li{
+    float: right;
+}
+  
+.mainMenu li a , .beigeMenu li a{
+    display: inline-block;
+    padding: 20px 30px;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.mainMenu li a:hover, .beigeMenu li a:hover{
+    color: #CCCCCC;
+    transition: 500ms;
+}
+
+.hero {
+    background-image: url('../img/Banniere_Hestia.png');
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+}
+
+.hero h1 {
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 2rem;
+}
+
+.intro {
+    background-color: #ce9d00;
+    height: 90vh;
+}
+
+.intro .wrapper {
+    /* display: flex;
+    justify-content: space-between; */
+    position: relative;
+}
+
+.introImg {
+    position: absolute;
+    max-width: 500px;
+    margin-top: 15vh;
+    margin-left: 10vw;
+    z-index: 1;
+}
+
+.intro .introText h2{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+}
+
+.intro .introText p {
+    font-family: 'Ubuntu', sans-serif;
+    margin-top: 1rem;
+}
+
+.intro .introText {
+    position: absolute;
+    max-width: 450px;
+    z-index: 2;
+    padding: 1rem;
+    background-color: #FFFFFF;
+    margin-top: 45vh;
+    margin-right: 10vw;
+    right: 0;
+    height: fit-content;
+}
+
+@media (max-width: 768px) {
+
+    .intro {
+        height: fit-content;
+        padding-bottom: 2rem;
+    }
+
+    .introImg {
+        position: relative;
+        max-width: 100%;
+        margin-top: 2rem;
+        margin-left: 0;
+    }
+
+    .intro .introText p {
+        font-family: 'Ubuntu', sans-serif;
+        margin-top: 1rem;
+    }
+    
+    .intro .introText {
+        position: relative;
+        max-width: 100%;
+        z-index: 2;
+        margin-top: 0;
+        margin-right: 0;
+
+        padding: 1rem;
+        height: fit-content;
+    }
+}
+
+.services {
+    min-height: 50vh;
+}
+
+.services .wrapper, .beige .wrapper {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+}
+
+@media (max-width: 768px) {
+    .app .wrapper {
+        flex-direction: column;
+        align-items:center;
+    }
+
+    .appImg {
+        margin-top: 2rem;
+    }
+
+    .floatRight {
+        text-align: justify;
+        margin-left: 0 !important;
+        width: 100% !important;
+        display: contents;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .floatRight h3 {
+        width: auto;
+        margin-top: 2rem;
+    }
+    .app .wrapper .floatRight h3::after{
+        right: 0 !important;
+    }
+}
+
+.app .wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.app .wrapper .appImg {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.floatRight {
+    margin-left: 2rem;
+    width: 50%;
+}
+
+.floatRight h3 {
+    width: fit-content;
+}
+
+/* From cssButtons.io by @BHARGAVPATEL1244 */
+.mainButton {
+    outline: none;
+    cursor: pointer;
+    border: none;
+    padding: 0.9rem 2rem;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    position: relative;
+    display: inline-block;
+    letter-spacing: 0.05rem;
+    font-weight: 700;
+    font-size: 17px;
+    border-radius: 500px;
+    overflow: hidden;
+    background: #3E3E3E;
+    color: ghostwhite !important;
+    text-decoration: none;
+    margin-bottom: 2rem !important;
+   }
+
+.mainButton:hover {
+    transform: scale(1.1);
+    transition: 200ms;
+}
+   
+
+
+h3 {
+    margin-top: 5rem;
+    position: relative;
+    font-size: 2rem;
+}
+
+h3::after{
+    content:'';
+    position: absolute;
+    background-color: #ce9d00;
+    background-position: 0 center;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    height: 5px;
+    width: 100px;
+    bottom: -10px;
+}
+
+.floatRight h3::after{
+    right: auto !important;
+}
+
+.cardContainer {
+    display: flex;
+    max-width: 100%;
+    margin-bottom: 5rem;
+}
+
+.cardContainer .card img {
+    width: 50px;
+    height: 50px;
+}
+
+.cardContainer .card {
+    margin: 2.5rem;
+    width: 33.333%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+    font-family: 'Ubuntu', sans-serif !important;
+}
+
+.cardContainer h4 {
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .cardContainer {
+        flex-direction: column;
+    }
+
+    .cardContainer .card {
+        width: 100%;
+        margin: 0;
+        margin-top: 2rem !important;
+    }
+}
+
+.beige, .app {
+    min-height: 50vh;
+    background-color: #FFF1CC;
+}
+
+.beige p, .service p, .app p {
+    margin-top: 2rem;
+    font-family: 'Ubuntu', sans-serif !important;
+}
+
+footer {
+    min-height: 250px;
+    background-color: #3E3E3E;
+    display: flex;
+    align-content: center;
+}
+
+footer .wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer img {
+    width: 200px;
+}
+
+@media (max-width: 768px) {
+    footer .wrapper {
+        flex-direction: column;
+    }
+
+    .legal ul {
+        display: block !important;
+        text-align: center;
+    }
+}
+
+.legal ul {
+    list-style-type: none;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.legal ul li {
+    padding: 20px 30px;
+}
+
+.legal ul li a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.legal ul li a:hover {
+    color: #CCCCCC;
+    transition: 500ms;
+}
+
+.sns {
+    width: 30px;
+    transition: 500ms;
+}
+
+.sns:hover {
+    transform: scale(1.2); 
+}
+
+.post-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.post-content {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.post-info {
+    margin-top: 2rem;
+    text-align: center;
+    color: #C4C4C4;
+}
+
+.post-content, .post-content p, .post-content h2 {
+    margin-top: 2rem;
+}
+
+.post-content {
+    margin-bottom: 4rem;
+}
+
+.post-content p {
+    font-size: 1.2rem;
+}
+
+.archive-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.archive-info {
+    color: #C4C4C4;
+}
+
+.post-content .archive p, .archive-text, .archive-info {
+    margin-top: 1rem !important;
+}
+
+.archive-arrow {
+    color: #ce9d00;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.archive-arrow:hover {
+    color: #2596be;
+    text-decoration: underline;
+}
+
+.alignleft {
+    float: left;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.alignright {
+    float: right;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.aligncenter {
+    display:block;
+    margin:0 auto;
+}
+
+.post-content img {
+    max-width: 100%;
+}

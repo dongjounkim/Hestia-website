@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="fr">
 
 <head>
@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -75,6 +75,35 @@
             </nav>
         </div>
     </footer>
+</body>
+
+</html> -->
+<?php
+    get_header('beige');
+?>
+
+<div class="main wrapper">
+    <div class="post">
+
+        <?php
+        if( have_posts() ) {
+            while( have_posts() ) {
+                the_post();
+                get_template_part('template-parts/content','archive');
+            }
+        }
+        ?>
+
+       
+    </div>
+</div>
+
+
+<?php 
+    get_footer();
+    wp_footer();
+?>
+
 </body>
 
 </html>
