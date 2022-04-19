@@ -219,6 +219,10 @@ body {
     position: relative;
 }
 
+.main {
+    min-height: calc(100vh - 250px) !important;
+}
+
 .introImg {
     position: absolute;
     max-width: 500px;
